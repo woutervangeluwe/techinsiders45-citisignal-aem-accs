@@ -90,29 +90,47 @@
       stickySession: true
     });
 
-    // Add toggle button and click behaviour after widget loads
     setTimeout(() => {
       const mount = document.getElementById('brand-concierge-mount');
+      mount.style.display = 'none';
 
       const toggle = document.createElement('button');
       toggle.id = 'brand-concierge-toggle';
-      toggle.innerHTML = '💬';
       toggle.setAttribute('aria-label', 'Open chat');
+      toggle.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>`;
       document.body.appendChild(toggle);
 
       toggle.addEventListener('click', () => {
-        const isExpanded = mount.classList.toggle('expanded');
-        toggle.innerHTML = isExpanded ? '✕' : '💬';
-        toggle.setAttribute('aria-label', isExpanded ? 'Close chat' : 'Open chat');
-        mount.style.display = isExpanded ? 'block' : 'none';
+        const isExpanded = mount.style.display === 'flex';
+        if (isExpanded) {
+          mount.style.display = 'none';
+          toggle.setAttribute('aria-label', 'Open chat');
+          toggle.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>`;
+        } else {
+          mount.style.display = 'flex';
+          toggle.setAttribute('aria-label', 'Close chat');
+          toggle.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>`;
+        }
       });
-
-      // Start collapsed
-      mount.style.display = 'none';
     }, 500);
   });
 </script>
-
 <script nonce="aem" src="/scripts/aem.js" type="module"></script>
 <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
 <script nonce="aem" src="/scripts/commerce.js" type="module"></script>
