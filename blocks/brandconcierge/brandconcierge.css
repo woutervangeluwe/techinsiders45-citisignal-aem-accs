@@ -1,1 +1,14 @@
+#brand-concierge-mount {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
 
+#brand-concierge-mount.expanded {
+  width: 400px;
+  height: 600px;
+}
