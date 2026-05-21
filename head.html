@@ -89,6 +89,27 @@
       stylingConfigurations: window.styleConfiguration,
       stickySession: true
     });
+
+    // Add toggle button and click behaviour after widget loads
+    setTimeout(() => {
+      const mount = document.getElementById('brand-concierge-mount');
+
+      const toggle = document.createElement('button');
+      toggle.id = 'brand-concierge-toggle';
+      toggle.innerHTML = '💬';
+      toggle.setAttribute('aria-label', 'Open chat');
+      document.body.appendChild(toggle);
+
+      toggle.addEventListener('click', () => {
+        const isExpanded = mount.classList.toggle('expanded');
+        toggle.innerHTML = isExpanded ? '✕' : '💬';
+        toggle.setAttribute('aria-label', isExpanded ? 'Close chat' : 'Open chat');
+        mount.style.display = isExpanded ? 'block' : 'none';
+      });
+
+      // Start collapsed
+      mount.style.display = 'none';
+    }, 500);
   });
 </script>
 
