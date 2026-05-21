@@ -147,3 +147,55 @@
 <link rel="modulepreload" href="/scripts/__dropins__/tools/preact-compat.js" />
 <link rel="modulepreload" href="/scripts/__dropins__/tools/preact-hooks.js" />
 <link rel="modulepreload" href="/scripts/__dropins__/tools/components.js" />
+
+<style>
+  #brand-concierge-toggle {
+    position: fixed !important;
+    bottom: 28px !important;
+    right: 28px !important;
+    left: auto !important;
+    top: auto !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: #6a5acd !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 99999 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  #brand-concierge-toggle:hover {
+    transform: scale(1.08) !important;
+  }
+
+  #brand-concierge-mount {
+    position: fixed !important;
+    bottom: 96px !important;
+    right: 28px !important;
+    left: auto !important;
+    top: auto !important;
+    width: 380px !important;
+    height: 560px !important;
+    max-width: calc(100vw - 56px) !important;
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.2) !important;
+    overflow: hidden !important;
+    z-index: 99998 !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+  }
+
+  #brand-concierge-mount > * {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+  }
+</style>
