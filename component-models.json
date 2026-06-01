@@ -150,25 +150,6 @@
     ]
   },
   {
-    "id": "carousel-item",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "image",
-        "value": "",
-        "label": "Image",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Content",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -5533,12 +5514,5 @@
         "readOnly": true
       }
     ]
-  },
-  {
-  "id": "brandconcierge",
-  "fields": []
   }
 ]
-
-
-
